@@ -1,13 +1,29 @@
-#include <stdio.h>
-#define Pi 3.14159265
 
+#include <stdio.h>
+#include <math.h>
 int main ()
 {
+    double a,b,c,disc,x1,x2,p,q;
+    scanf("%lf%lf%lf",&a,&b,&c);
+    disc = b*b-4*a*c;
 
-    int r ;
-    scanf("%d",&r);
+    if (disc>0)
+    {
+    x1 = (-b-sqrt(disc))/(2.0*a);
+    x2 = (-b+sqrt(disc))/(2.0*a);
+    printf("%.6f %.6f",x1,x2);
+    }
+    else if (disc==0)
+    {
+        x1 = x2 = (-b/(2.0*a));
+        printf("%.6f",x1);
 
-    printf("%f\n",Pi*r*r);
-    printf("%f\n",2.0*r*r);
+    }
+    else if (disc<0)
+    {
+        printf("No Answer\n");
+    }
+
     return 0;
+
 }
