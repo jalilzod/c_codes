@@ -104,9 +104,71 @@
 //                    printf("%d/%s/%d", day, monthName, year);
 //                    return 0;
 //             }
-int main( )
-              {     double sum=0,v;
-                    while (scanf("%lf",&v)==1)
-                         printf("%.2f\n",sum+=v);
-                    return 0;
-             }
+//int main( )
+//              {     double sum=0,v;
+//                    while (scanf("%lf",&v)==1)
+//                         printf("%.2f\n",sum+=v);
+//                    return 0;
+//             }
+//int main() {
+//    int a = 0;
+//    int b = 0;
+//
+//    while (scanf("%d %d", &a, &b) != EOF) {
+//        if (a > b)
+//            printf("%d>%d\n", a, b);
+//        else if (a < b)
+//            printf("%d<%d\n", a, b);
+//        else
+//            printf("%d=%d\n", a, b);
+//    }
+//
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int n = 0;
+//    while (scanf("%d", &n) == 1)
+//    {
+//        if (n % 2 == 0)
+//            printf("Even\n");
+//        else
+//            printf("Odd\n");
+//    }
+//    return 0;
+//}
+
+
+int main()
+{
+	//数组如果有n个元素，最坏的情况下要找n次
+	int arr[10] = { 1,2,3,4,5,6,17,18,19,110 };
+	int k = 7;//查找7
+	int left = 0;
+	int right = 9;
+	int flag = 0;
+	while (left<=right)
+	{
+		int mid = (left + right) / 2;//求出中间元素的下标
+		if (arr[mid] > k)
+		{
+			right = mid - 1;
+		}
+		else if (arr[mid] < k)
+		{
+			left = mid + 1;
+		}
+		else
+		{
+			printf("找到了，下标是：%d\n", mid);
+			flag = 1;
+			break;
+		}
+	}
+	if (flag == 0)
+		printf("找不到\n");
+
+	return 0;
+}
